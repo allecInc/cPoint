@@ -7,6 +7,11 @@ app.use(express.json());
 let items = [];
 let idCounter = 1;
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('hello world');
+});
+
 // Create item
 app.post('/items', (req, res) => {
   const item = { id: idCounter++, ...req.body };
